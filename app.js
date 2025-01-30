@@ -5,6 +5,9 @@ const amigos = []
 const input = document.getElementById('amigo')
 const listaAmigos = document.getElementById('listaAmigos')
 
+const btnSortear = document.getElementById('btnSortear')
+const resultado = document.getElementById('resultado')
+
 const actualizarListaAmigos = () => {
     listaAmigos.innerHTML = ''
 
@@ -27,5 +30,13 @@ const agregarAmigo = () => {
     return amigos
 }
 
-
+const sortearAmigo = () => {
+    if (amigos.length === 0) {
+        alert('Agrega al menos un amigo para seleccionar')
+        return
+    }
+    const randomIndex = Math.floor(Math.random() * amigos.length)
+    listaAmigos.innerHTML = ''
+    resultado.innerHTML = amigos[randomIndex]
+}
 
